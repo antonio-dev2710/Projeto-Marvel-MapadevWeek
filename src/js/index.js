@@ -58,7 +58,7 @@ characters.forEach((_character) => {
     if (selectedPlay1 && !selectedPlay2) {
 
       //Deixando o texto 1P somente no persongem clicado na escolha do play 1
-      $(`#${_personagem.getAttribute("id")}`).children([0]).text("1P");
+      $(`#${ _character.getAttribute("id")}`).children([0]).text("1P");
       //Colocando texto 2P em todos os spans
       $(".tag").text("2P");
 
