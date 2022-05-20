@@ -38,7 +38,7 @@ Antes de começar, é necessário ter instalado em sua máquina um editor para t
 
 ```bash
 # Clone este repositório
-$ git clon ehttps://github.com/antonio-dev2710/Projeto-Marvel.git
+$ git clone https://github.com/antonio-dev2710/Projeto-Marvel.git
 
 
 # Abra o VSCode
@@ -52,10 +52,10 @@ $ git clon ehttps://github.com/antonio-dev2710/Projeto-Marvel.git
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-- [HTML5](https://www.typescriptlang.org/)
-- [CSS3](https://reactnative.dev/)
-- [Javascript](https://openweathermap.org/api)
-- [Jquery](https://pt-br.reactjs.org/docs/context.html)
+- [HTML5](https://html.spec.whatwg.org/)
+- [CSS3](https://www.w3schools.com/css/)
+- [Javascript](https://www.javascript.com/)
+- [Jquery](https://jquery.com/)
 
 
 
