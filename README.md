@@ -16,7 +16,7 @@
 
 
 <h1 align="center">
-  <img alt="WeatherApp" title="WeatherApp" src="https://github.com/antonio-dev2710/Projeto-Marvel/blob/main/imagens/gifSelecionePersonagem.gif" height="425" />
+  <img alt="WeatherApp" title="WeatherApp" src="https://github.com/antonio-dev2710/Projeto-Marvel-MapadevWeek/blob/main/src/imagens/gifExemploProjeto.gif" height="440" />
   
 
 </h1>
