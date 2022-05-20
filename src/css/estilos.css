@@ -1,0 +1,180 @@
+/*cria um seletor css e dentro desse seletor pode ser criado uma propiedade e a partir disso coloca-se o valor em relção a propiedade*/
+
+body {
+    font-family: 'ssf4', Courier, monospace;
+    /*caso n carregue a fonte ssf4 será utilizado a fonte Courier,monospace; */
+    background: var(--cor-secundaria);
+    /* */
+}
+
+/*::before é um peseudo elemento antes do body cria um elemento */
+body::before {
+    content: '';
+    background-image: url("../imagens/giphyMarvel.webp");
+    background-repeat: no-repeat;
+    /*não repete */
+    background-size: cover;
+    /*cobre*/
+    position: absolute;
+    /*tira o posicionamento do fluxo da página*/
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    /*ajuda a posicionar os elementos*/
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.cabecalho {
+    z-index: 1;
+    /*posição das camadas fica por cima do fundo main*/
+    display: flex;
+    justify-content: center;
+    /*altera a posição dos filhos */
+}
+
+/*necessário colocar o espaço pois tem ierarquia o h1 tá dentro do header, o título está dentro do cabecalho*/
+.cabecalho .titulo {
+    color: var(--cor-titulo-fraco);
+    text-transform: uppercase;
+    font-size: 40px;
+    line-height: 102px;
+    -webkit-text-stroke: 2px var(--cor-titulo-forte);
+    /*funcoione melhor em mais navegadores*/
+}
+
+.selecao-de-personagens {
+    display: flex;
+    align-items: center;
+    /*verticalmente no centro */
+    justify-content: center;
+    /*horizontalmente no centro */
+}
+
+.selecao-de-personagens .personagem-grande {
+    text-align: center;
+    width: 20%;
+    height: 70vh;
+    position: relative;
+    /*vem pra frente nesse caso já tem um index padrão */
+}
+
+.selecao-de-personagens .personagem-grande img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /*uma forma de alinhar verticalmente e horizontalmente */
+    height: 28rem;
+}
+
+.selecao-de-personagens .personagem-grande .nome::before {
+    content: '';
+    height: 15px;
+    width: 100%;
+    position: absolute;
+    /*postion abs precisa de elemento pai para assim posicionar dentro dele*/
+    bottom: -15px;
+    left: 0;
+    /*ficar alinhado a esquqerda*/
+
+}
+
+.selecao-de-personagens .personagem-grande h2 {
+    color: var(--cor-padrao);
+    font-family: 'command', sans-serif;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    font-size: 27px;
+}
+
+/*classes do mesmo elemento é sem espaço*/
+.selecao-de-personagens .personagem-grande.personagem-jogador-1 .nome::before {
+    background-color: var(--cor-azul-principal);
+}
+
+.selecao-de-personagens .personagem-grande.personagem-jogador-2 .nome::before {
+    background-color: var(--cor-vermelha-principal);
+}
+
+.selecao-de-personagens .lista-de-personagens {
+    display: flex;
+    flex-wrap: wrap;
+    /*quando a tela for muito puena quebra eles pra baixo*/
+    max-width: 600px;
+    justify-content: center;
+    gap: 12px;
+    /*vai dar um espaçaento entre os elementos filhos*/
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem {
+    border: 2px solid var(--cor-padrao);
+    background-color: var(--cor-padrao);
+    width: 25%;
+    height: 135px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.15s ease-in-out;
+    /*tipo de animação*/
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem img {
+    width: 100%;
+    /*do li personagem*/
+    height: 100%;
+    /*do li personagem*/
+    border-radius: 5px;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem.selecionadoUm {
+    border: 2px solid var(--cor-azul-media);
+    animation: c-glowing-blue .3s ease-in-out infinite;
+    /*vem do arquivo animacoes*/
+    animation-direction: alternate;
+    /*vai ficar piscando em azul*/
+}
+
+
+
+
+.selecao-de-personagens .lista-de-personagens .personagem .tag {
+    display: none;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: var(--cor-azul-media);
+    transition: opacity 0.3s ease-in-out;
+    animation: text-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem.selecionadoUm .tag {
+    display: block;
+    animation: text-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+/* Personagem */
+.selecao-de-personagens .lista-de-personagens .personagem.selecionadoDois {
+    border: 2px solid var(--cor-vermelha-media);
+    animation: c-glowing-red .3s ease-in-out infinite;
+    /*vem do arquivo animacoes*/
+    animation-direction: alternate;
+    /*vai ficar piscando em azul*/
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem.selecionadoDois .tag {
+    display: block;
+    animation: text-glowing-red .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
